@@ -2,8 +2,14 @@ import React, {useState} from 'react';
 import {styled, ThemeProvider} from 'styled-components';
 import {lightTheme, darkTheme} from './utils/Themes';
 import Sidebar from './components/Sidebar';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Dashboard from './pages/Dashboard';
+import Search from './pages/Search';
+import DisplayPodcast from './pages/DisplayPodcast';
+import Favourites from './pages/Favourites';
+import PodcastDetails from './pages/PodcastDetails';
+import Profile from './pages/Profile';
 
 const Container = styled.div`
   display: flex;
@@ -39,7 +45,38 @@ const App = () => {
               menuOpen={menuOpen}
               setMenuOpen={setMenuOpen}
             />
-            PODSTAR
+            <Routes>
+              <Route
+                path='/'
+                exact
+                element={<Dashboard />}
+              />
+              <Route
+                path='/search'
+                exact
+                element={<Search />}
+              />
+              <Route
+                path='/showpodcasts/:type'
+                exact
+                element={<DisplayPodcast />}
+              />
+              <Route
+                path='/favourites'
+                exact
+                element={<Favourites />}
+              />
+              <Route
+                path='/podcast/:id'
+                exact
+                element={<PodcastDetails />}
+              />
+              <Route
+                path='/profile'
+                exact
+                element={<Profile />}
+              />
+            </Routes>
           </Frame>
         </Container>
       </Router>

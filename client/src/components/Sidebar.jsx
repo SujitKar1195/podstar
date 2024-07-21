@@ -17,7 +17,7 @@ const MenuContainer = styled.div`
   background-color: ${({theme}) => theme.bg};
   color: ${({theme}) => theme.text_primary};
   height: 100vh;
-  flex: 0.3;
+  flex: 0.5;
   display: flex;
   flex-direction: column;
   @media (max-width: 1100px) {
