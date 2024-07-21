@@ -7,6 +7,7 @@ const DashboardMain = styled.div`
   padding: 20px 30px;
   padding-bottom: 200px;
   height: 100%;
+  overflow-x: hidden;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -41,7 +42,16 @@ const Span = styled.div`
     font-size: 16px;
   }
 `;
-const Podcasts = styled.div``;
+const Podcasts = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 18px 6px;
+  //center the items if only one item present
+  @media (max-width: 550px) {
+    justify-content: center;
+  }
+`;
 
 const Dashboard = () => {
   return (
@@ -58,6 +68,7 @@ const Dashboard = () => {
         </Topic>
         <Podcasts>
           <PodcastCard />
+          <PodcastCard />
         </Podcasts>
       </FilterContainer>
       <FilterContainer>
@@ -71,6 +82,8 @@ const Dashboard = () => {
           </Link>
         </Topic>
         <Podcasts>
+          <PodcastCard />
+          <PodcastCard />
           <PodcastCard />
         </Podcasts>
       </FilterContainer>
